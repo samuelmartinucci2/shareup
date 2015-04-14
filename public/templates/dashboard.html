@@ -1,0 +1,28 @@
+<nav class="top-bar">
+    <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+            <h1><a href="#">Welcome back {{ user.name }} </a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="divider show-for-small"></li>
+            <li>
+                <a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a>
+            </li>
+        </ul>
+    </section>
+</nav>
+<div class="container">
+    <div class="row">
+        <ul class="large-12 columns">
+            <li class="row" data-ng-repeat="article in articles | orderBy:publishedDate:false">
+                <article-listing ng-model="article" on-share="share(recipient, article)"></article-listing>
+            </li>
+        </ul>
+    </div>
+</div>
